@@ -3,7 +3,7 @@ module Restforce
     module Parser
       class Xml
         def batches(data)
-          parsed_data = Restforce::Mash.new(::MultiXml.parse(data)) unless date.is_a?(Restforce::Mash)
+          parsed_data = Restforce::Mash.new(::MultiXml.parse(data)) unless data.is_a?(Restforce::Mash)
 
           wrap_in_array(parsed_data.batchInfoList.batchInfo)
         end
